@@ -1,38 +1,38 @@
+<script setup lang="ts">
+import { useSystemInfo } from '../composables/useSystemInfo'
+
+const { systemInfo } = useSystemInfo()
+</script>
+
 <template>
-  <view class="px-10 py-20 text-center">
-    <u-tabs :list="list" :is-scroll="false" :current="current" @change="change"></u-tabs>
-    <slot />
-    <app-footer />
-    <view class="mx-auto mt-5 text-center text-sm opacity-25">
-      [Default Layout]
+  <view class="bg" :style="{ height: `${systemInfo.windowHeight}px` }">
+    <view class="status" :style="{ height: `${systemInfo.statusBarHeight}px` }">
+      {{ systemInfo.statusBarHeight }}
     </view>
+    <view class="navbar" :style="{ height: `${systemInfo.navigationBarHeight}px` }">
+      {{ systemInfo.navigationBarHeight }}
+    </view>
+    <slot />
+    <MyNavbar />
   </view>
 </template>
-<script setup lang="ts">
-import { ref } from 'vue'
 
-// 定义Tab项接口
-interface TabItem {
-  name: string
-  count?: number
+<style>
+.bg{
+  width: 100%;
+}
+.status {
+  width: 100%;
+  background-color: #fcfcfc;
+  padding: 0 30rpx;
+  box-sizing: border-box;
 }
 
-// 定义响应式数据
-const list = ref<TabItem[]>([
-  {
-    name: '待收货'
-  }, {
-    name: '待付款'
-  }, {
-    name: '待评价',
-    count: 5
-  }
-])
-
-const current = ref<number>(0)
-
-// 定义change事件回调函数
-const change = (index: number) => {
-  current.value = index
+.navbar {
+  width: 100%;
+  background-color: red;
+  color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
 }
-</script>
+</style>

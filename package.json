@@ -13,6 +13,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "postinstall": "npx simple-git-hooks"
+
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-4070520250711001",
@@ -75,10 +76,10 @@
   },
   "pnpm": {
     "overrides": {
-      "unconfig": "7.3.2",
-      "vue": "3.4.37",
       "@vue/runtime-core": "3.4.37",
-      "@vue/server-renderer": "3.4.37"
+      "@vue/server-renderer": "3.4.37",
+      "unconfig": "7.3.2",
+      "vue": "3.4.37"
     }
   },
   "simple-git-hooks": {

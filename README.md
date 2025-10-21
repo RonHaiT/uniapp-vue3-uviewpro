@@ -31,3 +31,10 @@ Vitesse for uni-app
 - 📥 [API 自动加载](https://github.com/antfu/unplugin-auto-import) - 直接使用 Composition API 无需引入
 
 - 🦾 [TypeScript](https://www.typescriptlang.org/) & [ESLint](https://eslint.org/) - 保证代码质量
+
+## eslint
+```bash
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "postinstall": "npx simple-git-hooks"
+```

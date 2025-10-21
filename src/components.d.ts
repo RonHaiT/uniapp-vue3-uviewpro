@@ -7,12 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AppFooter: typeof import('./components/AppFooter.vue')['default']
-    AppLogos: typeof import('./components/AppLogos.vue')['default']
-    HiCounter: typeof import('./components/HiCounter.vue')['default']
-    InputEntry: typeof import('./components/InputEntry.vue')['default']
+    MyNavbar: typeof import('./components/MyNavbar.vue')['default']
+    MyTabbar: typeof import('./components/MyTabbar.vue')['default']
     UBadge: typeof import('uview-pro/components/u-badge/u-badge.vue')['default']
-    UButton: typeof import('uview-pro/components/u-button/u-button.vue')['default']
-    UTabs: typeof import('uview-pro/components/u-tabs/u-tabs.vue')['default']
+    UCard: typeof import('uview-pro/components/u-card/u-card.vue')['default']
+    UIcon: typeof import('uview-pro/components/u-icon/u-icon.vue')['default']
+    USwiper: typeof import('uview-pro/components/u-swiper/u-swiper.vue')['default']
+    UTabbar: typeof import('uview-pro/components/u-tabbar/u-tabbar.vue')['default']
   }
 }
