@@ -22,10 +22,13 @@ export function useSystemInfo() {
     try {
       const info = await uni.getWindowInfo()
       systemInfo.statusBarHeight = info.statusBarHeight
+
       // 视口高度
       systemInfo.windowHeight = info.windowHeight
       systemInfo.windowWidth = info.windowWidth
+
       // 小程序获取胶囊按钮信息
+      // #ifdef MP-WEIXIN
       const custom = uni.getMenuButtonBoundingClientRect()
 
       if (custom) {
@@ -35,6 +38,13 @@ export function useSystemInfo() {
       else {
         systemInfo.navigationBarHeight = 44 // 默认导航栏高度
       }
+      // #endif
+
+      // H5平台处理
+      // #ifdef H5
+      systemInfo.navigationBarHeight = 44
+      // #endif
+
       console.warn('🚀 ~ getSystemInfo ~ systemInfo:', systemInfo)
     }
     catch (error) {
