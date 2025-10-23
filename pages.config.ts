@@ -1,16 +1,38 @@
 import { defineUniPages } from '@uni-helper/vite-plugin-uni-pages'
 
 export default defineUniPages({
-  pages: [{
-    path: 'pages/home',
-    type: 'home', // 指定为首页
-  }, {
-    path: 'pages/add',
-    type: 'page',
-  }, {
-    path: 'pages/me',
-    type: 'page',
-  }],
+  pages: [
+    {
+      path: 'pages/home/index',
+      style: {
+        navigationBarTitleText: '首页',
+      },
+    },
+    {
+      path: 'pages/post/index',
+      style: {
+        navigationBarTitleText: '发布首页',
+      },
+    },
+    {
+      path: 'pages/me/order',
+      style: {
+        navigationBarTitleText: '订单',
+      },
+    },
+    {
+      path: 'pages/me/index',
+      style: {
+        navigationBarTitleText: '我的',
+      },
+    },
+    {
+      path: 'pages/master/index',
+      style: {
+        navigationBarTitleText: '达人首页',
+      },
+    },
+  ],
   globalStyle: {
     backgroundColor: '@bgColor',
     backgroundColorBottom: '@bgColorBottom',
@@ -22,25 +44,27 @@ export default defineUniPages({
     navigationStyle: 'custom',
   },
   tabBar: {
+    custom: true,
     backgroundColor: '@tabBgColor',
     borderStyle: '@tabBorderStyle',
     color: '@tabFontColor',
     selectedColor: '@tabSelectedColor',
     list: [
       {
-        pagePath: 'pages/home',
-
+        pagePath: 'pages/home/index',
         text: '首页',
       },
       {
-        pagePath: 'pages/add',
-
+        pagePath: 'pages/post/index',
         text: '发布',
       },
       {
-        pagePath: 'pages/me',
+        pagePath: 'pages/me/order',
+        text: '订单',
+      },
+      {
+        pagePath: 'pages/me/index',
         text: '我的',
-
       },
     ],
   },

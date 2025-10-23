@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import MyTabbar from '@/components/tabbar/index.vue'
 import { useSystemInfo } from '../composables/useSystemInfo'
 
 const { systemInfo } = useSystemInfo()
@@ -13,8 +14,9 @@ const { systemInfo } = useSystemInfo()
       {{ systemInfo.navigationBarHeight }}
     </view>
     <slot />
-    <MyNavbar />
+    <!-- <MyNavbar /> -->
   </view>
+  <MyTabbar :current="0" />
 </template>
 
 <style>

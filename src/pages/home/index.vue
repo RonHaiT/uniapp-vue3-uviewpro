@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-definePage({
-  type: 'home',
-})
-
 // 定义轮播图项接口
 interface SwiperItem {
   image: string
@@ -38,6 +34,6 @@ const list = ref<SwiperItem[]>([
 
 <style lang="scss" scoped>
 .wrap {
-  padding: 30rpx;
+    padding: 30rpx;
 }
 </style>
